@@ -17,7 +17,7 @@ chabot_icon_integration();
 let chatAppTemplateIntegration = () => {
     const chatAppTemplate = document.createElement('div');
     chatAppTemplate.innerHTML = `<div style='position: fixed;bottom: 51px;right: 0px;z-index:9999;'>
-                                    <iframe src='https://chatbot-client-sigma.vercel.app/' frameBorder='0' id="abcd" style="display:none"/>
+                                    <iframe src='https://chatbot-client-three.vercel.app/' frameBorder='0' id="abcd" style="display:none"/>
                                 </div>`;
     document.body.appendChild(chatAppTemplate);
 }
@@ -25,7 +25,7 @@ chatAppTemplateIntegration()
 
 //ACTION OPEN CLOSE ICONs
 document.getElementById("close-chatbot-iocn").onclick = function () {
-    document.getElementById('abcd').style.cssText = 'display: block;height: 520px;    margin: 0 18px 18px 0;';
+    document.getElementById('abcd').style.cssText = 'display: block;height: 520px;width: 372px;margin: 0 18px 18px 0;';
     document.getElementById('close-chatbot-iocn').style.cssText = 'display: none;color: white;font-size:26px;';
     document.getElementById('open-chatbot-iocn').style.cssText = 'display: block;color: white;font-size:26px;padding: 0px 4px !important;';
 }
