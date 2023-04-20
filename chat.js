@@ -1,4 +1,4 @@
-// GETTING ICON 
+// GETTING ICON //
 var imported = document.createElement('script');
 imported.src = 'https://kit.fontawesome.com/a076d05399.js';
 document.head.appendChild(imported);
