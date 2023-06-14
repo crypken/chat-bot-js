@@ -17,8 +17,8 @@ async function initial() {
             .then((res) => res.json())
             .then((result) => {
                 let response = result?.data?.getChatSettings;
-                if (response.responseCode == '1') { settings = response.data } else { alert("Error: Please contact Admin"); }
-            }).catch(error => { alert("Error: Please contact Admin") });
+                if (response.responseCode == '1') { settings = response.data } else { console.log("Error: Please contact Admin"); }
+            }).catch(error => { console.log("Error: Please contact Admin") });
     }
     await getCustomizationByIdData()
     let chabot_icon_integration = () => {
