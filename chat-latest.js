@@ -62,7 +62,7 @@ async function initial() {
             ${settings.chatButton == "chat-button1" ? "" :
             settings.chatButton == "chat-button3" ? "" :
                 settings.chatButton == "chat-button5" ? "" : settings.agentOnlineText
-            }<span style="width:20px;">${settings.iconImage}</span>
+            }<span style="width:20px;height:20px">${settings.iconImage}</span>
             </span>
             <span id='open-chatbot-iocn' style="font-size:16px;color: white;padding: 3px;display:none; gap:10px">
              ${settings.chatButton == "chat-button1" ? "" :
