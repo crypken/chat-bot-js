@@ -1,8 +1,6 @@
-//"https://chatbot-client-three.vercel.app?omegaOrgId="+window.crypken._globals.appId
-//'http://localhost:3000?omegaOrgId='+window.crypken._globals.appId
-let CPK_APP_BASE_URL = 'http://localhost:9090/graphql'
-let CPK_APP_IFRAME_URL = 'http://localhost:3000?omegaOrgId=' + window.crypken._globals.appId
-// let CPK_APP_IFRAME_URL = "https://chatbot-client-three.vercel.app?omegaOrgId="+window.crypken._globals.appId
+let env_type = window.crypken._globals.env
+let CPK_APP_BASE_URL = env_type == 'production' ? "https://app.chat-botx.com/graphql" : 'http://localhost:9090/graphql'
+let CPK_APP_IFRAME_URL = env_type == 'production' ? 'https://app.chat-botx.com?omegaOrgId=' + window.crypken._globals.appId : 'http://localhost:3000?omegaOrgId=' + window.crypken._globals.appId
 var settings = {}
 
 async function initial() {
@@ -60,15 +58,15 @@ async function initial() {
             }'>
             <span id='close-chatbot-iocn' style="font-size:16px; display: flex;flex-direction: row;align-items: center;gap: 10px; padding: 3px">
             ${settings.chatButton == "chat-button1" ? "" :
-            settings.chatButton == "chat-button3" ? "" :
-                settings.chatButton == "chat-button5" ? "" : settings.agentOnlineText
+                settings.chatButton == "chat-button3" ? "" :
+                    settings.chatButton == "chat-button5" ? "" : settings.agentOnlineText
             }<span style="width:20px;height:20px">${settings.iconImage}</span>
             </span>
             <span id='open-chatbot-iocn' style="font-size:16px;color: white;padding: 3px;display:none; gap:10px">
              ${settings.chatButton == "chat-button1" ? "" :
                 settings.chatButton == "chat-button3" ? "" :
-                    settings.chatButton == "chat-button5" ? "" : settings.agentOnlineText  
-                }<svg width="20px" viewBox="0 0 24 24" fill=${settings.iconFillColor} stroke=${settings.iconFillColor} xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Menu / Close_LG"> <path id="Vector" d="M21 21L12 12M12 12L3 3M12 12L21.0001 3M12 12L3 21.0001" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g> </g></svg>
+                    settings.chatButton == "chat-button5" ? "" : settings.agentOnlineText
+            }<svg width="20px" viewBox="0 0 24 24" fill=${settings.iconFillColor} stroke=${settings.iconFillColor} xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Menu / Close_LG"> <path id="Vector" d="M21 21L12 12M12 12L3 3M12 12L21.0001 3M12 12L3 21.0001" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g> </g></svg>
             </span>
                                           
                        </div>`,
