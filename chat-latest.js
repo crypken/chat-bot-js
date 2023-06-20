@@ -1,6 +1,6 @@
 let env_type = window.crypken._globals.env
 let CPK_APP_BASE_URL = env_type == 'production' ? "https://app.chat-botx.com/graphql" : 'http://localhost:9090/graphql'
-let CPK_APP_IFRAME_URL = env_type == 'production' ? 'https://app.chat-botx.com?omegaOrgId=' + window.crypken._globals.appId : 'http://localhost:3000?omegaOrgId=' + window.crypken._globals.appId
+let CPK_APP_IFRAME_URL = env_type == 'production' ? 'https://chat.chat-botx.com?omegaOrgId=' + window.crypken._globals.appId : 'http://localhost:3000?omegaOrgId=' + window.crypken._globals.appId
 var settings = {}
 
 async function initial() {
@@ -21,7 +21,8 @@ async function initial() {
     await getCustomizationByIdData()
     let chabot_icon_integration = () => {
         const t = document.createElement("div");
-        t.innerHTML = `<div style='
+        t.innerHTML = `<style>.omega-iframe-widget svg {vertical-align: unset !important;}</style>
+                        <div class="omega-iframe-widget" style='
                             display:flex;
                             gap: 10px;
                             z-index: 99999;
